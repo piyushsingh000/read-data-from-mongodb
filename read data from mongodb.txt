@@ -1,0 +1,23 @@
+const dbconnect = require("./mongodb");
+
+const main = async () => {
+  let data = await dbconnect();
+  data = await data.find().toArray();
+  console.warn(data);
+};
+
+main();
+
+// mongo db ka code...
+// const { MongoClient } = require("mongodb");
+// const url = "mongodb://0.0.0.0:27017";
+// const databaseName = "Youtube";
+// const client = new MongoClient(url);
+
+// async function dbconnect() {
+//   let result = await client.connect();
+//   db = result.db(databaseName);
+//   return db.collection("video1");
+// }
+
+// module.exports = dbconnect;
